@@ -95,11 +95,11 @@ Prerequisites: completed scenario 9.
 |ID|Name|Steps|Expected result|
 |--|--|--|--|
 |1|Login in CLI.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.<br>6. Check login by CLI command `ngb list_ref -t`.|Login is successful.<br>List of references is displayed.|
-|2|Grant READ permissions for a ROLE_USER user on registered in scenario 9 BAM file.|1. Grant READ permissions on BAM file by CLI command `ngb grant {ROLE_USER_USER_NAME} BAM {BAM_NAME} r`.|Permissions is successful granted.|
-|3|Grant READ permissions for a ROLE_USER user on registered in scenario 9 VCF file.|1. Grant READ permissions on VCF file by CLI command `ngb grant {ROLE_USER_USER_NAME} VCF {VCF_NAME} r`.|Permissions is successful granted.|
-|4|Grant READ permissions for a ROLE_USER user on registered in scenario 9 WIG file.|1. Grant READ permissions on WIG file by CLI command `ngb grant {ROLE_USER_USER_NAME} WIG {WIG_NAME} r`.|Permissions is successful granted.|
-|5|Grant READ permissions for a ROLE_USER user on registered in scenario 9 MAF file.|1. Grant READ permissions on MAF file by CLI command `ngb grant {ROLE_USER_USER_NAME} MAF {MAF_NAME} r`.|Permissions is successful granted.|
-|6|Grant READ permissions for a ROLE_USER user on registered in scenario 9 SEG file.|1. Grant READ permissions on SEG file by CLI command `ngb grant {ROLE_USER_USER_NAME} SEG {SEG_NAME} r`.|Permissions is successful granted.|
+|2|Grant READ permissions for a ROLE_USER user on registered in scenario 9 BAM file.|1. Grant READ permissions on BAM file by CLI command `ngb chmod +r --users "{ROLE_USER_USER_NAME}" --files "{BAM_NAME}"`.|Permissions is successful granted.|
+|3|Grant READ permissions for a ROLE_USER user on registered in scenario 9 VCF file.|1. Grant READ permissions on VCF file by CLI command `ngb chmod +r --users "{ROLE_USER_USER_NAME}" --files "{VCF_NAME}"`.|Permissions is successful granted.|
+|4|Grant READ permissions for a ROLE_USER user on registered in scenario 9 WIG file.|1. Grant READ permissions on WIG file by CLI command `ngb chmod +r --users "{ROLE_USER_USER_NAME}" --files "{WIG_NAME}"`.|Permissions is successful granted.|
+|5|Grant READ permissions for a ROLE_USER user on registered in scenario 9 MAF file.|1. Grant READ permissions on MAF file by CLI command `ngb chmod +r --users "{ROLE_USER_USER_NAME}" --files "{MAF_NAME}"`.|Permissions is successful granted.|
+|6|Grant READ permissions for a ROLE_USER user on registered in scenario 9 SEG file.|1. Grant READ permissions on SEG file by CLI command `ngb chmod +r --users "{ROLE_USER_USER_NAME}" --files "{SEG_NAME}"`.|Permissions is successful granted.|
 |7|Login as ROLE_USER user.<br>Validate permissions on NGB UI.|1. Open NGB UI.<br>2. Login as ROLE_USER user.<br>3. Select dataset from scenario 9.|BAM, VCF, WIG, MAF, SEG files is displayed under dataset name and on "Browser" panel.|
 |8|Validate tracks on NGB UI.|Select any chromosome by click on "CHR:NONE" on top left corner of "Browser" tab.|On "Browser" tab is displayed list of tracks: REFERENCE, BAM, VCF, WIG, SEG, MAF, GFF, GTF.|
 
@@ -117,7 +117,7 @@ Prerequisites: completed scenario 11.
 |ID|Name|Steps|Expected result|
 |--|--|--|--|
 |1|Login in CLI.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.<br>6. Check login by CLI command `ngb list_ref -t`.|Login is successful.<br>List of references is displayed.|
-|2|Deny READ permissions for a ROLE_USER user on BAM file registered in scenario 9.|1. Deny READ permissions on BAM file by CLI command `ngb deny {ROLE_USER_USER_NAME} BAM {BAM_NAME} r`.|Permissions is successful denied.|
+|2|Deny READ permissions for a ROLE_USER user on BAM file registered in scenario 9.|1. Deny READ permissions on BAM file by CLI command `ngb chmod -r --users "{ROLE_USER_USER_NAME}" --files "{BAM_NAME}"`.|Permissions is successful denied.|
 |3|Login as ROLE_USER user without READ permissions on BAM file.<br>Validate permissions on NGB UI.|Login in NGB UI by ROLE_USER user without READ permissions on BAM and select dataset created in scenario 9.|BAM file isn't displayed in dataset.|
 
 ## Scenario 13. View files by ROLE_USER user without READ permissions on VCF file in dataset.
@@ -126,7 +126,7 @@ Prerequisites: completed scenario 11.
 |ID|Name|Steps|Expected result|
 |--|--|--|--|
 |1|Login in CLI.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.<br>6. Check login by CLI command `ngb list_ref -t`.|Login is successful.<br>List of references is displayed.|
-|2|Deny READ permissions for a ROLE_USER user on VCF file registered in scenario 9.|1. Deny READ permissions on VCF file by CLI command `ngb deny {ROLE_USER_USER_NAME} VCF {VCF_NAME} r`.|Permissions is successful denied.|
+|2|Deny READ permissions for a ROLE_USER user on VCF file registered in scenario 9.|1. Deny READ permissions on VCF file by CLI command `ngb chmod -r --users "{ROLE_USER_USER_NAME}" --files "{VCF_NAME}"`.|Permissions is successful denied.|
 |3|Login as ROLE_USER user without READ permissions on VCF file.<br>Validate permissions on NGB UI.|Login in NGB UI by ROLE_USER user without READ permissions on VCF and select dataset created in scenario 9.|VCF file isn't displayed in dataset.|
 
 ## Scenario 14. View files by ROLE_USER user without READ permissions on SEG file in dataset.
@@ -135,7 +135,7 @@ Prerequisites: completed scenario 11.
 |ID|Name|Steps|Expected result|
 |--|--|--|--|
 |1|Login in CLI.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.<br>6. Check login by CLI command `ngb list_ref -t`.|Login is successful.<br>List of references is displayed.|
-|2|Deny READ permissions for a ROLE_USER user on SEG file registered in scenario 9.|1. Deny READ permissions on SEG file by CLI command `ngb deny {ROLE_USER_USER_NAME} SEG {SEG_NAME} r`.|Permissions is successful denied.|
+|2|Deny READ permissions for a ROLE_USER user on SEG file registered in scenario 9.|1. Deny READ permissions on SEG file by CLI command `ngb chmod -r --users "{ROLE_USER_USER_NAME}" --files "{SEG_NAME}"`.|Permissions is successful denied.|
 |3|Login as ROLE_USER user without READ permissions on SEG file.<br>Validate permissions on NGB UI.|Login in NGB UI by ROLE_USER user without READ permissions on SEG and select dataset created in scenario 9.|SEG file isn't displayed in dataset.|
 
 ## Scenario 15. View files by ROLE_USER user without READ permissions on GTF file attached to reference.
@@ -144,7 +144,7 @@ Prerequisites: completed scenario 11.
 |ID|Name|Steps|Expected result|
 |--|--|--|--|
 |1|Login in CLI.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.<br>6. Check login by CLI command `ngb list_ref -t`.|Login is successful.<br>List of references is displayed.|
-|2|Deny READ permissions for a ROLE_USER user on GTF file registered in scenario 9.|1. Deny READ permissions on GTF file by CLI command `ngb deny {ROLE_USER_USER_NAME} GENE {GTF_NAME} r`.|Permissions is successful denied.|
+|2|Deny READ permissions for a ROLE_USER user on GTF file registered in scenario 9.|1. Deny READ permissions on GTF file by CLI command `ngb chmod -r --users "{ROLE_USER_USER_NAME}" --files "{GTF_NAME}"`.|Permissions is successful denied.|
 |3|Login as ROLE_USER user without READ permissions on GTF file.<br>Validate permissions on NGB UI.|1. Login in NGB UI by ROLE_USER user without READ permissions on GTF and select dataset created in scenario 9.<br>2. Click on "dashboard" icon on left panel and click on "Restore default layout".<br>3. Select dataset from prerequisites.<br>4. Click on reference name on header of "Browser" panel.|After click on reference name on UI, GTF file name isn't displayed in drop-down list.|
 
 ## Scenario 16. View files by ROLE_USER user without READ permissions on GFF file attached to reference.
@@ -153,7 +153,7 @@ Prerequisites: completed scenario 11.
 |ID|Name|Steps|Expected result|
 |--|--|--|--|
 |1|Login in CLI.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.<br>6. Check login by CLI command `ngb list_ref -t`.|Login is successful.<br>List of references is displayed.|
-|2|Deny READ permissions for a ROLE_USER user on GFF file registered in scenario 9.|1. Deny READ permissions on GFF file by CLI command `ngb deny {ROLE_USER_USER_NAME} GENE {GFF_NAME} r`.|Permissions is successful denied.|
+|2|Deny READ permissions for a ROLE_USER user on GFF file registered in scenario 9.|1. Deny READ permissions on GFF file by CLI command `ngb chmod -r --users "{ROLE_USER_USER_NAME}" --files "{GFF_NAME}"`.|Permissions is successful denied.|
 |3|Login as ROLE_USER user without READ permissions on GFF file.<br>Validate permissions on NGB UI.|1. Login in NGB UI by ROLE_USER user without READ permissions on GTF and select dataset created in scenario 9.<br>2. Click on "dashboard" icon on left panel and click on "Restore default layout".<br>3. Select dataset from prerequisites.<br>4. Click on reference name on header of "Browser" panel.|After click on reference name on UI, GFF file name isn't displayed in drop-down list.|
 
 ## Scenario 17. Search by features by ROLE_USER user without READ permissions on GENE files attached to reference.
@@ -201,7 +201,14 @@ Prerequisites: User shall have role ROLE_VCF_MANAGER, ROLE_BAM_MANAGER and ROLE_
 |9|Add WIG in created dataset. (dataset created on step 5, scenario 19)|1. Add registered WIG file into dataset created on step 1 scenario 19, by CLI command `ngb add_dataset {DATASET_NAME} {WIG_NAME}`.<br>2. Open NGB UI<br>3. Ensure "Dataset" tab is active and selected.<br>4. Expand and select created dataset.|Registered dataset is displayed on "Dataset" tab. Reference opposite dataset corresponds to existed reference name. In dataset is displayed registered WIG file.|
 |10|View WIG track on NGB UI.|Select covered chromosome of WIG file by click on "CHR:NONE" on top left corner of "Browser" tab.|Reference is displayed as first track.<br>BAM track is displayed as second.<br>VCF track is displayed as third.<br>WIG track is displayed as fourth.<br>Content of WIG track is displayed.|
 
-## Scenario 21. Remove species by ROLE_REFERENCE_MANAGER user.
+## Scenario 21. Try to login by user without roles and permissions.
+Prerequisites: User shall not have any role and permissions.
+
+|ID|Name|Steps|Expected result|
+|--|--|--|--|
+|1|Try to login by user without roles and permissions.|Login by user from prerequisites.|No datasets are displayed.|
+
+## Scenario 22. Remove species by ROLE_REFERENCE_MANAGER user.
 Prerequisites: User shall have role ROLE_REFERENCE_MANAGER. Scenario 1 shall be completed successfully.
 
 |ID|Name|Steps|Expected result|
@@ -211,7 +218,7 @@ Prerequisites: User shall have role ROLE_REFERENCE_MANAGER. Scenario 1 shall be 
 |3|Validate of species is successfully deleted from reference on NGB UI.|1. Navigate to any covered by BAM file region.<br>2. Click on any read.<br>3. On appeared menu click on "BLAT Search" point.|"BLAT" tab is appeared.<br>On "BLAT" tab is displayed message: "No species for reference file'{REFERNCE_NAME}'"|
 |4|Remove species from NGB server and check.|1. Remove species from NGB server by CLI command `ngb del_spec SPECIES_VERSION`.<br>2. Ensure species is removed from NGB server by CLI command `ngb list_spec -t`.|CLI return next message "No species registered on the server."|
 
-## Scenario 22. Remove WIG and BAM file by ROLE_BAM_MANAGER and ROLE_WIG_MANAGER user.
+## Scenario 23. Remove WIG and BAM file by ROLE_BAM_MANAGER and ROLE_WIG_MANAGER user.
 Prerequisites: User shall have role ROLE_BAM_MANAGER and ROLE_WIG_MANAGER. Scenario 20 shall be completed successfully.
 
 |ID|Name|Steps|Expected result|
@@ -221,7 +228,7 @@ Prerequisites: User shall have role ROLE_BAM_MANAGER and ROLE_WIG_MANAGER. Scena
 |3|Remove WIG file.|1. Remove WIG file from dataset created on step 5, scenario 19, by CLI command `ngb remove_dataset {DATASET_NAME} {WIG_FILE_NAME}`.<br>2. Remove WIG file registered in step 8, scenario 20, by CLI command `ngb del_file {WIG_NAME}`.|WIG file is successfully removed.|
 |4|Validate lack of the removed files on NGB UI.|Expand and select dataset created on step 5, scenario 19.|No BAM and WIG files in dataset.|
 
-## Scenario 23. Remove files by ROLE_USER user without special permissions.
+## Scenario 24. Remove files by ROLE_USER user without special permissions.
 Prerequisites: User shall have role ROLE_USER and no any other special permissions. Scenario 20 shall be completed successfully.
 
 |ID|Name|Steps|Expected result|
@@ -232,7 +239,7 @@ Prerequisites: User shall have role ROLE_USER and no any other special permissio
 |4|Force remove dataset.|Remove dataset created on step 5, scenario 19, by CLI command `ngb del_dataset {DATASET_NAME} --force`|Authorization error is displayed.|
 |5|Validate dataset and file on NGB UI.|1. Open NGB UI<br>2. Ensure "Dataset" tab is active and selected.<br>3. Expand and select dataset created on step 5, scenario 19.<br>4. Select "Variants" tab.|Dataset still displayed.<br>In dataset is displayed registered VCF file.<br>Next plots is displayed on "Browser" tab: "Variants by chromosome", "Variants types", "Variants quality".<br>List of variations from VCF file are displayed.|
 
-## Scenario 24. Force remove dataset by ROLE_VCF_MANAGER user.
+## Scenario 25. Force remove dataset by ROLE_VCF_MANAGER user.
 Prerequisites: User shall have role ROLE_VCF_MANAGER. Scenario 21 shall be completed successfully.
 
 |ID|Name|Steps|Expected result|
@@ -241,7 +248,7 @@ Prerequisites: User shall have role ROLE_VCF_MANAGER. Scenario 21 shall be compl
 |2|Force remove dataset.|Remove dataset created on step 5, scenario 19, by CLI command `ngb del_dataset {DATASET_NAME} --force`|Dataset is successfully deleted.
 |3|Validate lack of the removed files on NGB UI.|Open NGB UI.|Dataset created on step 5, scenario 19 is absent.|
 
-## Scenario 25. Remove attached to reference GENE file by ROLE_GENE_MANAGER user with WRITE permissions on reference.
+## Scenario 26. Remove attached to reference GENE file by ROLE_GENE_MANAGER user with WRITE permissions on reference.
 Prerequisites: User shall have role ROLE_GENE_MANAGER and WRITE permissions on reference. Scenarios 8 and 9 shall be completed successfully.
 
 |ID|Name|Steps|Expected result|
@@ -250,7 +257,7 @@ Prerequisites: User shall have role ROLE_GENE_MANAGER and WRITE permissions on r
 |2|Remove a gene file from the reference.|Remove attached to reference, on step 2 scenario 8, gene file by CLI command `ngb remove_genes {REFERENCE_NAME}`.|Gene file successfully removed from reference.|
 |3|Validate lack of the removed from reference gene file on NGB UI.|1. Open NGB UI.<br>2. Click on "dashboard" icon on left panel and click on "Restore default layout".<br>3. Select dataset created on step 2, scenario 9.<br>4. Click on reference name on header of "Browser" panel.|No drop-down list is displayed.|
 
-## Scenario 26. Force remove dataset by ROLE_ADMIN user.
+## Scenario 27. Force remove dataset by ROLE_ADMIN user.
 Prerequisites: User shall have role ROLE_ADMIN. Scenario 9 shall be completed successfully.
 
 |ID|Name|Steps|Expected result|
@@ -259,7 +266,7 @@ Prerequisites: User shall have role ROLE_ADMIN. Scenario 9 shall be completed su
 |2|Force remove dataset.|Remove dataset created on step 2, scenario 9, by CLI command `ngb del_dataset {DATASET_NAME} --force`|Dataset is successfully deleted.
 |3|Validate lack of the removed files on NGB UI.|Open NGB UI.|Dataset created on step 2, scenario 9 is absent.|
 
-## Scenario 27. Remove reference by ROLE_REFERENCE_MANAGER user.
+## Scenario 28. Remove reference by ROLE_REFERENCE_MANAGER user.
 Prerequisites: User shall have role ROLE_REFERENCE_MANAGER. No dataset and files registered for {REFERNCE_NAME}.
 
 |ID|Name|Steps|Expected result|
