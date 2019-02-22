@@ -382,3 +382,19 @@ Prerequisites: role that contain at least one user.
 |1|Login as ROLE_ADMIN user.|1. Login in NGB UI by ROLE_ADMIN user<br>2. Click on "Users" icon on left panel.|Login is successful.<br>"User management" pop-up is appeared.|
 |2|Remove user from role.|1. Click on "ROLES" tab.<br>2. Click on on "Pencil" icon opposite role name that contain user.<br>3. Click on "Bin" icon near user name.<br>4. Click on "SAVE" button.|"Edit role" pop-up is opened.<br>Deleted user is disappeared from table.<br>"Edit role" pop-up is closed.|
 |3|Validate user roles.|1. Click on "USERS" tab<br>2. Find user name that was deleted from role.|Role name isn't displayed near user name.|
+
+## Scenario 41. View datasets permissions by NGB CLI.
+Prerequisites:  several datasets with permissions shall be registered on server.
+
+|ID|Name|Steps|Expected result|
+|--|--|--|--|
+|1|Login in CLI as ROLE_ADMIN user.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.|Login is successful.|
+|2|View list of datasets with permissions info.|1. View list of datasets with permissions info by CLI command `ngb list_dataset --table --permissions`|List of datasets with permissions info for each is displayed.|
+
+## Scenario 42. View files permissions by NGB CLI.
+Prerequisites:  several files with permissions shall be registered on server.
+
+|ID|Name|Steps|Expected result|
+|--|--|--|--|
+|1|Login in CLI as ROLE_ADMIN user.|1. Open NGB.<br>2. Login as ROLE_ADMIN user.<br>3. Get authentication token.<br>4. Open CLI.<br>5. Login in CLI by command `ngb set_token {TOKEN}`.|Login is successful.|
+|2|View list of several files with permissions info.|1. View list of datasets with permissions info by CLI command `ngb search {part_of_file_name} --like --table --permissions`|List of files, that contain as sub-string the search request, with permissions info for each is displayed.|
